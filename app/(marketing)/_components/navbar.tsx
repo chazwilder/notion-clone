@@ -7,12 +7,12 @@ import Logo from "./logo";
 import { ModeToggle } from "@/components/ui/mode-toggle";
 
 const NavBar = () => {
-  const scrolled = useScrollTop();
+  const scrolled = useScrollTop() || false;
   return (
     <div
       className={cn(
         "z-50 bg-background fixed top-0 flex w-full p-7",
-        scrolled && "border-b shadow-sm"
+        scrolled ? "border-b shadow-sm" : undefined
       )}
     >
       <Logo />
